@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>サイコロ</title>
+<link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
+<script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
+</head>
+<body style="text-align:center;">
+    <div>
+        <button id="btn" style="font-size:8em;">サイコロ</button>
+        <div id="disp" style="font-size:8em;">？</div>
+    </div>
+
+<script type="mpy">
+import random
+from pyscript import document, when
+
+@when("click", "#btn")
+def show_dice(event):
+    r = random.randint(1,6)
+    disp = document.getElementById("disp")
+    disp.innerText = str(r)
+</script>
+</body>
+</html>
+
